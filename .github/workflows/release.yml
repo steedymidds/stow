@@ -1,0 +1,24 @@
+name: Release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Stow.app
+        working-directory: app
+        run: STOW_NO_INSTALL=1 ./build.sh "${GITHUB_REF_NAME#v}"
+      - name: Package
+        run: |
+          cd app/build && ditto -c -k --keepParent Stow.app ../../Stow-macos.zip
+          cd ../.. && zip -r Stow-engine.zip engine -x "engine/node_modules/*"
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            Stow-macos.zip
+            Stow-engine.zip
+          generate_release_notes: true

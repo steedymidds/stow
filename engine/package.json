@@ -1,0 +1,24 @@
+{
+  "name": "stow",
+  "version": "0.1.0",
+  "description": "Stow: an MCP server that reads, writes, summarises and maintains the folders and file stores you connect.",
+  "type": "module",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node test/smoke.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.17.5",
+    "zod": "3.25.76"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steedymidds/stow.git"
+  }
+}

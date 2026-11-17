@@ -1,0 +1,24 @@
+{
+  "name": "stow",
+  "version": "0.2.0",
+  "description": "Stow (lite): an MCP server for the organiser skill. Mac folders, synced cloud folders and external drives.",
+  "type": "module",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node test/smoke.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.17.5",
+    "zod": "3.25.76"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steedymidds/stow.git"
+  }
+}
